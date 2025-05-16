@@ -146,7 +146,7 @@ export default function AddData() {
 //   return allUploads
 // }
 
-  const [idUndangan, setIdUndangan] = useState('P-4')
+  const [idUndangan, setIdUndangan] = useState('P4-')
   const handleSubmit = async(e) => {
     e.preventDefault();
     const id =  idUndangan;
@@ -157,7 +157,7 @@ export default function AddData() {
       // console.log("Submitted data:", data);
       // Panggil fungsi uploadFiles dengan state files dan kategori
 
-      const uploadedFiles = await uploadFiles(id, files, [
+      const uploadedFiles = await uploadFiles(`weddings-four/${id}`, files, [
       'hero',
       // 'home',
       'groom',

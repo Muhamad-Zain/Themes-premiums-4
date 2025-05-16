@@ -112,8 +112,19 @@ useEffect(() => {
 }, []); // kosong = hanya sekali saat mount
 
 // Buat slideshow setelah gambar ada
+// useEffect(() => {
+//   if (images.length === 0) return;
+
+//   const timer = setInterval(() => {
+//     setIndex((prev) => (prev + 1) % images.length);
+//   }, 2500);
+
+//   return () => clearInterval(timer);
+// }, [images]);
+
+//         if (images.length === 0) return <p>Memuat gambar...</p>;
 useEffect(() => {
-  if (images.length === 0) return;
+  if (typeof window === 'undefined' || images.length === 0) return;
 
   const timer = setInterval(() => {
     setIndex((prev) => (prev + 1) % images.length);
@@ -121,8 +132,6 @@ useEffect(() => {
 
   return () => clearInterval(timer);
 }, [images]);
-
-        if (images.length === 0) return <p>Memuat gambar...</p>;
     return(
         <section className='relative'>
           <div className={`${style.bg} `}>
@@ -134,7 +143,7 @@ useEffect(() => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1 }}
         />
       </AnimatePresence>
     </div>
