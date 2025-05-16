@@ -1,0 +1,15 @@
+.bg{
+    @apply relative w-[90%] m-auto p-5 rounded-2xl overflow-hidden;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+}
+.bg::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+}

@@ -1,0 +1,9 @@
+.bgInformation{
+    @apply relative w-full h-screen 
+}
+.bgInformation::after{
+    content: '';
+    position: absolute;
+    @apply backdrop-blur-[2px]  h-full w-full top-0 left-0
+
+}

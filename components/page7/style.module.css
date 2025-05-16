@@ -1,0 +1,16 @@
+.comment{
+    @apply  relative p-5;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+}
+.comment::after{
+    content: '';
+    position: absolute;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    @apply bg-[#cfeecf] 
+}

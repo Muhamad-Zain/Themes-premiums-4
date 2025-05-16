@@ -1,0 +1,25 @@
+.rsvp{
+    @apply relative  p-5 ;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden;
+    /* color: white; */
+}
+.rsvp::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    top: 0;
+    left: 0;
+    @apply bg-[#cfeecf]
+}
+.cardBank{
+    @apply relative sm:w-[45%] w-[90%]  mx-auto rounded-xl bg-black bg-opacity-30 p-5 my-2
+}
+/* .cardBank::after{
+    content: '';
+    @apply absolute bg-black bg-opacity-20 top-0 left-0 w-full h-full rounded-xl 
+} */

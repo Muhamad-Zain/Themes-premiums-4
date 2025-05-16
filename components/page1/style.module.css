@@ -1,0 +1,14 @@
+.bgHero{
+    @apply  relative w-full z-40 flex justify-center items-center;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    height: calc(var(--vh, 1vh) * 100);
+    /* color: #5e2d00 */
+    color: #ffff
+    
+}
+.bgHero::after {
+    content: '';
+    @apply absolute bg-gray-500 bg-opacity-20  z-10 w-full top-0 h-full
+}
