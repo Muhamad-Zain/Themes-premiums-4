@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react'
 import style from './style.module.css'
+import Slider from "react-slick";
 import { fetchBg, fetchGalery, fetchImage } from '../data/firebase'
 import PropTypes from 'prop-types'
 import { AnimateSee } from '../animation'
 import Countdown from 'react-countdown'
 import { motion, AnimatePresence } from 'framer-motion'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 
 export default function Page2({data, id}) {
     // const [image, setImage] = useState('')
@@ -123,29 +127,46 @@ useEffect(() => {
 // }, [images]);
 
 //         if (images.length === 0) return <p>Memuat gambar...</p>;
- useEffect(() => {
-    if (images.length === 0) return;
+//  useEffect(() => {
+//     if (images.length === 0) return;
 
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 2500);
+//     const timer = setInterval(() => {
+//       setIndex((prev) => (prev + 1) % images.length);
+//     }, 2500);
 
-    return () => clearInterval(timer);
-  }, [images]);
+//     return () => clearInterval(timer);
+//   }, [images]);
 
-  if (images.length === 0) return <p>Memuat gambar...</p>;
+  // if (images.length === 0) return <p>Memuat gambar...</p>;
+  // const ImageSlider = ({ images }) => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    fade: true,
+    arrows: false,
+    pauseOnHover: false,
+    swipe: true
+  }
     return(
         <section className='relative'>
           <div className={`${style.bg} `}>
-            <div className="slider-container">
-              {images.map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  className={`slider-image ${i === index ? 'active' : ''}`}
-                  alt={`Slide ${i}`}
-                />
-              ))}
+            <div className="relative w-full h-screen overflow-hidden">
+              <Slider {...settings}>
+                {images.map((img, i) => (
+                  <div key={i}>
+                    <img
+                      src={img}
+                      alt={`Slide ${i}`}
+                      className="w-full h-screen object-cover"
+                    />
+                  </div>
+                ))}
+              </Slider>
             </div>
       {/* <AnimatePresence>
         <motion.img
