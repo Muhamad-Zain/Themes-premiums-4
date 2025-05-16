@@ -123,19 +123,31 @@ useEffect(() => {
 // }, [images]);
 
 //         if (images.length === 0) return <p>Memuat gambar...</p>;
-useEffect(() => {
-  if (typeof window === 'undefined' || images.length === 0) return;
+ useEffect(() => {
+    if (images.length === 0) return;
 
-  const timer = setInterval(() => {
-    setIndex((prev) => (prev + 1) % images.length);
-  }, 2500);
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 2500);
 
-  return () => clearInterval(timer);
-}, [images]);
+    return () => clearInterval(timer);
+  }, [images]);
+
+  if (images.length === 0) return <p>Memuat gambar...</p>;
     return(
         <section className='relative'>
           <div className={`${style.bg} `}>
-      <AnimatePresence>
+            <div className="slider-container">
+              {images.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  className={`slider-image ${i === index ? 'active' : ''}`}
+                  alt={`Slide ${i}`}
+                />
+              ))}
+            </div>
+      {/* <AnimatePresence>
         <motion.img
           key={images[index]}
           src={images[index]}
@@ -145,7 +157,7 @@ useEffect(() => {
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
         />
-      </AnimatePresence>
+      </AnimatePresence> */}
     </div>
             {/* <div style={{backgroundImage : `url('/assets/home.jpeg')`}} className={`${style.bg} w-full h-screen  `}>
                 <div className={`${style.wrap} relative z-10 h-screen  w-full flex justify-center items-center`}>
