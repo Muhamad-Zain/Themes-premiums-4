@@ -48,9 +48,9 @@ export default function Page5({data}) {
               </div>
             </div>
             {completed ? 
-            <h3 className="text-center text-xl bg-gray-600 bg-opacity-90 text-gray-100  w-72 p-2 rounded-lg mx-auto">Hari Pernikahan Telah Tiba !</h3>
+            <h3 className="text-center text-xl bg-gray-600 bg-opacity-90 text-gray-100 border border-gray-800 w-72 p-2 rounded-lg mx-auto">Hari Pernikahan Telah Tiba !</h3>
             : <div className="w-full flex justify-center">
-                <button onClick={handleSaveDate} className="text-xl bg-gray-600 bg-opacity-0 text-gray-100 p-2 rounded-lg">Save Date</button>
+                <button onClick={handleSaveDate} className="text-xl bg-gray-600 bg-opacity-80 border border-gray-800 text-gray-100 p-2 rounded-lg">Save Date</button>
               </div>
             }
          </>

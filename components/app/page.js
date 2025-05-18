@@ -90,19 +90,17 @@ export default function App({ id, name }) {
       <div id="page3">
         <Page3 id={id} data={data} />
       </div>
-      <div id="page4">
         <Page4 id={id} data={data} />
+      <div id="page5">
+      <Page5 data={data} />
       </div>
 
-      <Page5 data={data} />
+      <div id="page6">
       <Page6 id={id} data={data} />
+      </div>
       <Page7 id={id} />
       <Page8 id={id} data={data} />
-
-      <div id="page9">
-        <Page9 id={id} data={data} />
-      </div>
-
+      <Page9 id={id} data={data} />
       {/* Musik Button */}
       <button
         onClick={toggleMusic}
@@ -143,14 +141,14 @@ export default function App({ id, name }) {
         </button>
         <button
           disabled={!open}
-          onClick={() => scrollToPage("page4")}
+          onClick={() => scrollToPage("page5")}
           className="w-9 h-9 rounded-full border border-white flex justify-center items-center bg-black bg-opacity-70"
         >
           <MdOutlineShareLocation className="fill-current text-white" size={20} />
         </button>
         <button
           disabled={!open}
-          onClick={() => scrollToPage("page9")}
+          onClick={() => scrollToPage("page6")}
           className="w-9 h-9 rounded-full border border-white flex justify-center items-center bg-black bg-opacity-70"
         >
           <PiGooglePhotosLogoFill className="fill-current text-white" size={20} />
