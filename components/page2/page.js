@@ -155,14 +155,14 @@ useEffect(() => {
     return(
         <section className='relative'>
           <div className={`${style.bg} `}>
-            <div className="relative w-full h-[70vh] overflow-hidden">
+            <div className="relative w-full h-[70vh] sm:h-screen overflow-hidden">
               <Slider {...settings}>
                 {images.map((img, i) => (
                   <div key={i}>
                     <img
                       src={img}
                       alt={`Slide ${i}`}
-                      className="w-full h-[70vh] object-cover"
+                      className="w-full h-[70vh] sm:h-screen object-cover"
                     />
                   </div>
                 ))}

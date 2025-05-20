@@ -18,9 +18,9 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family:  sans-serif;
-  color: #3a3a3a;
+  /* color: #3a3a3a; */
   background-color: #e9fce9;
-  @apply text-sm
+  @apply text-sm text-gray-700
   /* font-family: "Playfair Display", serif;
   font-optical-sizing: auto; */
 }

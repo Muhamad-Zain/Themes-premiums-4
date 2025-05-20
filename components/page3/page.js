@@ -29,7 +29,7 @@ export default function Page3({data, id}) {
         <section className='py-10 px-2 sm:px-20'>
             <div className='text-4xl sm:text-5xl text-center font-bold pb-10'>
                 <h3 className='Lora -mb-2 font-extrabold'>Bride</h3>
-                <h3 className='GVibes border-b-2 border-gray-700 w-72 m-auto '>& Groom</h3>
+                <h3 className='GVibes border-b-2 border-gray-600 w-72 m-auto  '>& Groom</h3>
                 {/* <div className='border-b-2 border-orange-800 w-72  '/> */}
             </div>
             <div className='playfair text-md sm:text-lg opacity-80 italic text-center pb-10'>
@@ -41,7 +41,7 @@ export default function Page3({data, id}) {
             <h3 className='text-center text-3xl pb-10 GVibes'>The Groom</h3>
             </AnimateSee>
             <AnimateSee>
-            <div className=' flex  items-center justify-center'>
+            <div className=' flex  items-center justify-center '>
                 <div style={{backgroundImage:`url(${groom})`}} className={style.bgCardMen} />
             </div>
             </AnimateSee>
