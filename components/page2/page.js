@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import style from './style.module.css'
 import Slider from "react-slick";
-import { fetchBg, fetchGalery, fetchImage } from '../data/firebase'
+import { fetchGalery } from '../data/firebase'
 import PropTypes from 'prop-types'
 import { AnimateSee } from '../animation'
-import Countdown from 'react-countdown'
-import { motion, AnimatePresence } from 'framer-motion'
+// import Countdown from 'react-countdown'
+// import { motion, AnimatePresence } from 'framer-motion'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
@@ -168,6 +168,12 @@ useEffect(() => {
                 ))}
               </Slider>
             </div>
+            <AnimateSee>
+              <div className='absolute text-yellow-400 z-30 bottom-10 w-full text-center   '>
+                <h3 style={{textShadow: "1px 1px white"}} className='text-opacity-95 text-5xl GVibes tracking-wider font-bold  border-b inline ' >{data?.name?.mens} & {data?.name?.grils}</h3>
+                <p className='text-sm pt-2 font-semibold'>{data?.date?.resepsi}</p>
+              </div>
+            </AnimateSee>
       {/* <AnimatePresence>
         <motion.img
           key={images[index]}
