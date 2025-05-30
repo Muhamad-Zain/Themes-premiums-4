@@ -29,14 +29,14 @@ export default function Page4({data, id}) {
                 <div  className={style.bg}>
                  <AnimateSee>
                     <h3 className='text-center z-10 relative text-2xl GVibes font-semibold border-b-2 border-gray-800 w-40 mx-auto'>Akad Nikah</h3>
-                    <div className='relative z-10 text-center py-5 text-lg '>
+                    <div className='relative z-10 text-center py-5 text-sm '>
                         <p>{data?.date?.akad}</p>
                         <p>{data?.date?.time?.akad} - Selesai</p>
                         <div  className='py-5'>
                             <p>Bertempat di:</p>
                             <p>{data?.gift?.home}</p>
                         </div>
-                        <Link href={`${data?.location?.akad}`} className='py-2 w-48 m-auto flex justify-center items-center rounded-md bg-gray-600 text-white bg-opacity-80 '>
+                        <Link href={`${data?.location?.akad}`} className='py-2 w-48 m-auto flex justify-center items-center rounded-md bg-gray-600 text-white bg-opacity-80 text-lg '>
                             <SiGooglemaps className='mr-2' />
                             Google Maps
                         </Link>
@@ -46,14 +46,14 @@ export default function Page4({data, id}) {
                 <div className={style.bg}>
                  <AnimateSee>
                     <h3 className='text-center z-10 relative text-2xl GVibes font-semibold border-b-2 border-gray-800  w-40 mx-auto'>Resepsi</h3>
-                    <div className='relative z-10 text-center py-5 text-lg '>
+                    <div className='relative z-10 text-center py-5 text-sm '>
                         <p>{data?.date?.resepsi}</p>
                         <p>{data?.date?.time?.resepsi} - Selesai</p>
                         <div  className='py-5'>
                             <p>Bertempat di:</p>
                             <p>{data?.gift?.home}</p>
                         </div>
-                        <Link href={`${data?.location?.resepsi}`} className='py-2 w-48 m-auto flex justify-center items-center rounded-md bg-gray-600 text-white bg-opacity-80 '>
+                        <Link href={`${data?.location?.resepsi}`} className='py-2 w-48 m-auto flex justify-center items-center rounded-md bg-gray-600 text-white bg-opacity-80 text-lg '>
                             <SiGooglemaps className='mr-2' />
                             Google Maps
                         </Link>
