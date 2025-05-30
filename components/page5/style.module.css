@@ -16,7 +16,7 @@
     @apply bg-green-900 bg-opacity-30 backdrop-blur-sm
 } */
 .bg{
-    @apply relative h-[60vh] sm:h-[70vh] p-5 sm:p-10 mt-5 object-cover;
+    @apply relative p-5 sm:p-10  object-cover;
     background-position: center;
     background-size: cover;
 }

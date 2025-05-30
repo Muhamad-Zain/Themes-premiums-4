@@ -21,7 +21,7 @@ export default function Page4({data, id}) {
     },[])
     return(
         <section>
-            <div className='text-4xl sm:text-5xl text-center pt-20'>
+            <div className='text-4xl sm:text-5xl text-center pt-10'>
                 <h3 className='font-extrabold playfair -mb-3'>Wedding</h3>
                 <h3 className='GVibes border-b-2 border-gray-800 w-72 m-auto '>Event</h3>
             </div>
@@ -29,7 +29,7 @@ export default function Page4({data, id}) {
                 <div  className={style.bg}>
                  <AnimateSee>
                     <h3 className='text-center z-10 relative text-2xl GVibes font-semibold border-b-2 border-gray-800 w-40 mx-auto'>Akad Nikah</h3>
-                    <div className='relative z-10 text-center py-10 text-lg '>
+                    <div className='relative z-10 text-center py-5 text-lg '>
                         <p>{data?.date?.akad}</p>
                         <p>{data?.date?.time?.akad} - Selesai</p>
                         <div  className='py-5'>
@@ -46,7 +46,7 @@ export default function Page4({data, id}) {
                 <div className={style.bg}>
                  <AnimateSee>
                     <h3 className='text-center z-10 relative text-2xl GVibes font-semibold border-b-2 border-gray-800  w-40 mx-auto'>Resepsi</h3>
-                    <div className='relative z-10 text-center py-10 text-lg '>
+                    <div className='relative z-10 text-center py-5 text-lg '>
                         <p>{data?.date?.resepsi}</p>
                         <p>{data?.date?.time?.resepsi} - Selesai</p>
                         <div  className='py-5'>

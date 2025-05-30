@@ -1,5 +1,5 @@
 .bgInformation{
-    @apply relative w-full h-screen 
+    @apply relative 
 }
 .bgInformation::after{
     content: '';
