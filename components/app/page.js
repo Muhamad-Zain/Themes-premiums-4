@@ -29,13 +29,15 @@ export default function App({ id, name }) {
   useEffect(() => {
     // window.scrollTo(0, 0);
     const page1 = document.getElementById('page1');
-    page1?.scrollIntoView({ behavior: 'auto' });
+    // page1?.scrollIntoView({ behavior: 'auto' });
+    if (page1) {
+    page1.scrollIntoView({ behavior: 'auto' });
+  }
       // window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
 
     document.body.style.overflow = "hidden";
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
+    
 
     return () => {
       document.body.style.overflow = "";
@@ -43,6 +45,8 @@ export default function App({ id, name }) {
   }, []);
 
   useEffect(() => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
     const getData = async () => {
       const result = await fetchData(id);
       setData(result);
