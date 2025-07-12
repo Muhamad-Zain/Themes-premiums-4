@@ -26,27 +26,46 @@ export default function App({ id, name }) {
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
 
+  // useEffect(() => {
+  //   // window.scrollTo(0, 0);
+  //   const page1 = document.getElementById('page1');
+  //   page1?.scrollIntoView({ behavior: 'auto' });
+  //     // window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+
+
+  //   document.body.style.overflow = "hidden";
+  //   const vh = window.innerHeight * 0.01;
+  //   document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+  //   return () => {
+  //     document.body.style.overflow = "";
+  //   };
+  // }, []);
   useEffect(() => {
-    // window.scrollTo(0, 0);
-    const page1 = document.getElementById('page1');
-    // page1?.scrollIntoView({ behavior: 'auto' });
-    if (page1) {
-    page1.scrollIntoView({ behavior: 'auto' });
-  }
-      // window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  // 1. Pastikan scroll ke atas segera saat halaman dimuat
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  };
 
+  // 2. Tambahkan ke event `load` agar dipastikan dijalankan saat halaman dimuat
+  window.addEventListener('load', scrollToTop);
 
-    document.body.style.overflow = "hidden";
-    
+  // 3. Untuk beberapa browser, juga pastikan saat `beforeunload`, posisi disimpan ke atas
+  window.addEventListener('beforeunload', scrollToTop);
 
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, []);
+  // 4. Lock scroll dan hitung vh
+  document.body.style.overflow = 'hidden';
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  return () => {
+    document.body.style.overflow = '';
+    window.removeEventListener('load', scrollToTop);
+    window.removeEventListener('beforeunload', scrollToTop);
+  };
+}, []);
 
   useEffect(() => {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
     const getData = async () => {
       const result = await fetchData(id);
       setData(result);
