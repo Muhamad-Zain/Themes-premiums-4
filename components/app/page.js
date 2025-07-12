@@ -179,7 +179,7 @@ export default function App({ id, name }) {
       </div>
     </section>
   ) : (
-    <h1>ID tidak ada</h1>
+    <h1 className=" text-red-400 flex justify-center items-center h-[50vh]" >ID tidak ada !!</h1>
   );
 }
 
