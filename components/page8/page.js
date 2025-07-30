@@ -50,7 +50,7 @@ export default function Page8({id, data}) {
                 setAlert('')
             }, 2000);
         } else {
-            const rsvp = ref(database, `weddings/${id}/rsvp/${Date.now()}`)
+            const rsvp = ref(database, `weddings-four/${id}/rsvp/${Date.now()}`)
             set(rsvp, {
                 name,
                 confirm:select,
@@ -186,7 +186,7 @@ export default function Page8({id, data}) {
                             className=' bg-gray-600 bg-opacity-80 text-white py-2 px-4 rounded-md'>Open Gift</button>
                         </div>
                     <div className={`${gift ? ' max-h-[200rem] opacity-100' : ' max-h-0 opacity-0 '} transition-all duration-500 ease-in-out  overflow-hidden w-full  py-5`}>
-                        {data?.gift?.one?.nameBank === data?.gift?.one?.nameBank ? (
+                        {data?.gift?.one?.nameBank ? (
                             <div className={style.cardBank}>
                             <h1 style={{textShadow:'2px 2px white'}} className='text-blue-800 font-bold text-3xl italic'>{data?.gift?.one?.nameBank}</h1>
                             <div className='py-5 italic'>
@@ -202,7 +202,7 @@ export default function Page8({id, data}) {
                             </button>
                             </div>
                         ): null}
-                        {data?.gift?.two?.nameBank === data?.gift?.two?.nameBank ? (
+                        {data?.gift?.two?.nameBank ? (
                             <div className={style.cardBank}>
                             <h1 style={{textShadow:'2px 2px white'}} className='text-blue-800 font-bold text-3xl italic'>{data?.gift?.two?.nameBank}</h1>
                             <div className='py-5 italic'>
